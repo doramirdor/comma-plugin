@@ -1,0 +1,14 @@
+{
+  "name": "comma",
+  "owner": {
+    "name": "comma",
+    "url": "https://commareports.com"
+  },
+  "plugins": [
+    {
+      "name": "comma",
+      "source": "./plugins/comma",
+      "description": "Publish, search, link to, and review Comma reports from inside Claude Code. Adds /comma-publish, /comma-search, /comma-routine, /comma-link, /comma-review plus an MCP attachment to the hosted Comma server."
+    }
+  ]
+}
