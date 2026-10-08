@@ -229,7 +229,10 @@ function formatFeedback(sourceLabel, comments) {
 
 async function main() {
   if (!API_TOKEN) {
-    die(1, "COMMA_API_TOKEN is not set. Get one at https://commareports.com/settings#tokens.");
+    die(
+      1,
+      "COMMA_API_TOKEN is not set. Get one at https://commareports.com/settings?section=tokens",
+    );
   }
   const { flags, positional } = parseArgs(process.argv.slice(2));
   if (positional.length === 0) {

@@ -14,7 +14,7 @@ Treat `$ARGUMENTS` as a path to a file the user wants to review and comment on. 
 
 2. **Resolve the upload format**:
    - If the path ends in `.html` or `.htm`: use the file content as-is. Set `UPLOAD_PATH=$ARGUMENTS`.
-   - If the path ends in `.md` or `.markdown`: render the markdown to a minimal HTML shape — `<h1>`, `<h2>`, `<h3>`, `<p>`, `<ul>/<ol>/<li>`, `<pre><code>`, `<blockquote>`, `<a>`, `<strong>`, `<em>`, `<table>`. Wrap the whole document in a single `<article>…</article>`. Do NOT include `<script>`, `<style>`, `<iframe>`, or external CSS — Comma sanitizes those out and the review surface will look broken.
+   - If the path ends in `.md` or `.markdown`: render the markdown to a minimal HTML shape — `<h1>`, `<h2>`, `<h3>`, `<p>`, `<ul>/<ol>/<li>`, `<pre><code>`, `<blockquote>`, `<a>`, `<strong>`, `<em>`, `<table>`. Wrap the whole document in a single `<article>…</article>`.
      - Write the rendered HTML to `/tmp/comma-review-<random>.html` using the Write tool, where `<random>` is any short unique token.
      - Set `UPLOAD_PATH` to that temp path.
    - Anything else: render its text content as a single `<article><pre>…</pre></article>` and write to `/tmp/comma-review-<random>.html`. Set `UPLOAD_PATH` to that path.
@@ -33,7 +33,7 @@ Treat `$ARGUMENTS` as a path to a file the user wants to review and comment on. 
    - After applying all edits, summarise in 2–4 bullets what you changed in response to each comment.
 
 5. **If the CLI exits non-zero**, surface its stderr to the user verbatim. The most common causes:
-   - `COMMA_API_TOKEN is not set` → link the user to https://commareports.com/settings#tokens to create one and add it to their shell env.
+   - `COMMA_API_TOKEN is not set` → link the user to https://commareports.com/settings?section=tokens to create one and add it to their shell env.
    - Timeout → re-run `/comma-review $ARGUMENTS` when they're ready.
    - Cancelled → the user closed the session; ask whether they want to retry.
 

@@ -1,7 +1,7 @@
 {
   "name": "comma",
   "description": "Publish the assistant's last reply (or any HTML/markdown) to Comma as a shareable report, search your existing reports, open share URLs, and run interactive reviews — open a file in your browser, leave anchored comments, and feed them back to Claude as structured feedback.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": {
     "name": "Comma",
     "url": "https://commareports.com"

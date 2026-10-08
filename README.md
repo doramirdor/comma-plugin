@@ -35,7 +35,7 @@ claude plugin install comma@comma
 export COMMA_API_TOKEN=comma_sk_your_token_here
 ```
 
-Mint a token at <https://commareports.com/settings#tokens> — it starts
+Mint a token at <https://commareports.com/settings?section=tokens> — it starts
 with `comma_sk_`. Restart Claude Code after installing so it picks up
 the plugin's MCP attachment.
 
@@ -46,7 +46,7 @@ the plugin's MCP attachment.
 | `/comma-publish [title]`       | Publishes the assistant's most recent reply as an HTML report and returns the URL.  |
 | `/comma-publish-last [title]`  | Alias for `/comma-publish`.                                                          |
 | `/comma-search <query>`        | Full-text searches your existing reports.                                            |
-| `/comma-routine [description]` | Lists recent reports or kicks off a `request_review` on one.                          |
+| `/comma-routine [description]` | Lists your routines, or sets up a scheduled routine on a report.                      |
 | `/comma-link <report_id>`      | Resolves a report id to its title + share URL.                                       |
 | `/comma-review <file>`         | Opens a file in your browser for anchored comments, then feeds them back to Claude.  |
 
